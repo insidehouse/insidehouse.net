@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>insidehouse</title>
+  <meta name="description" content="Insidehouse 是一個數位基地：收納想法、專案、提案與實驗。" />
+  <meta name="theme-color" content="#0b0b0c" />
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --panel:#121214;
+      --text:#e9e9ee;
+      --muted:#a7a7b3;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 12px 40px rgba(0,0,0,.45);
+      --radius:18px;
+      --pad:22px;
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Heiti TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: radial-gradient(900px 500px at 25% 10%, rgba(255,255,255,.06), transparent 60%),
+                  radial-gradient(700px 420px at 85% 20%, rgba(255,255,255,.05), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.9}
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    /* Top bar */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 12px 2px 22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:650;
+      letter-spacing:.2px;
+    }
+
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 0 0 5px rgba(255,255,255,.08);
+    }
+
+    .nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .pill{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .pill:hover{background: rgba(255,255,255,.06); color: var(--text);}
+
+    /* Hero */
+    .hero{
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border-radius: calc(var(--radius) + 8px);
+      padding: 34px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:14px;
+      color: var(--muted);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding: 7px 12px;
+      border-radius: 999px;
+    }
+
+    .kicker span{
+      display:inline-block;
+      width:6px;height:6px;border-radius:50%;
+      background: rgba(255,255,255,.55);
+    }
+
+    h1{
+      margin: 18px 0 10px;
+      font-size: clamp(34px, 5.2vw, 54px);
+      line-height:1.1;
+      letter-spacing: -0.8px;
+    }
+
+    .lead{
+      margin: 0;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 66ch;
+    }
+
+    .ctaRow{
+      margin-top: 22px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .btn.primary{
+      background: rgba(255,255,255,.92);
+      color:#0b0b0c;
+      border-color: rgba(255,255,255,.92);
+    }
+
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
+
+    .hint{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Grid */
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding: var(--pad);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .card h2{
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+
+    .card p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      padding: 8px 10px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+
+    .tag small{
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    /* Two-column layout on wider screens */
+    @media (min-width: 860px){
+      .hero{padding: 44px 44px;}
+      .card.half{grid-column: span 6;}
+      .card.third{grid-column: span 4;}
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      padding: 18px 6px;
+      color: var(--muted);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      font-size: 13px;
+    }
+
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand" aria-label="insidehouse">
+        <div class="dot" aria-hidden="true"></div>
+        <div>insidehouse</div>
+      </div>
+
+      <nav class="nav" aria-label="site links">
+        <!-- 把 # 換成你的實際網址，例如 https://lab.insidehouse.net -->
+        <a class="pill" href="#lab">Lab</a>
+        <a class="pill" href="#docs">Docs</a>
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#about">About</a>
+      </nav>
+    </div>
+
+    <section class="hero" id="top">
+      <div class="kicker"><span></span>個人／小團隊的數位基地</div>
+      <h1>把想法變成<br/>可被看見的東西。</h1>
+      <p class="lead">
+        insidehouse 是一個用來收納想法、專案、提案與實驗的地方。
+        先用最簡單的工具建立，再用 AI 讓產出加速。
+      </p>
+
+      <div class="ctaRow">
+        <!-- 主要 CTA：你最常用的入口 -->
+        <a class="btn primary" href="#lab" aria-label="Go to Lab">
+          進入 Lab <span aria-hidden="true">→</span>
+        </a>
+        <a class="btn" href="#docs" aria-label="Go to Docs">
+          看 Docs <span aria-hidden="true">↗</span>
+        </a>
+        <div class="hint">提示：把「#lab」換成你的子域名連結會更像真的基地。</div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="main sections">
+      <article class="card half" id="lab">
+        <h2>Lab</h2>
+        <p>實驗、快速頁面、測試想法。能用 HTML + CSS 解決的都先用這裡。</p>
+        <div class="links">
+          <a class="tag" href="#">
+            <strong class="mono">lab</strong> <small>建議：lab.insidehouse.net</small>
+          </a>
+          <a class="tag" href="#">
+            <strong>Latest build</strong> <small>放你最近的頁面</small>
+          </a>
+        </div>
+      </article>
+
+      <article class="card half" id="docs">
+        <h2>Docs</h2>
+        <p>結案報告、提案、筆記、整理過的內容。讓未來的你能快速回收。</p>
+        <div class="links">
+          <a class="tag" href="#">
+            <strong class="mono">docs</strong> <small>建議：docs.insidehouse.net</small>
+          </a>
+          <a class="tag" href="#">
+            <strong>Index</strong> <small>文件目錄</small>
+          </a>
+        </div>
+      </article>
+
+      <article class="card third" id="projects">
+        <h2>Projects</h2>
+        <p>精選作品或正在進行的東西。少而精，讓人一眼懂你在做什麼。</p>
+        <div class="links">
+          <a class="tag" href="#"><strong>Selected</strong> <small>精選清單</small></a>
+        </div>
+      </article>
+
+      <article class="card third" id="about">
+        <h2>About</h2>
+        <p>一句話介紹你／insidehouse。你也可以把聯絡方式放這。</p>
+        <div class="links">
+          <a class="tag" href="mailto:hello@insidehouse.net">
+            <strong>Email</strong> <small>hello@insidehouse.net</small>
+          </a>
+          <a class="tag" href="#">
+            <strong>Link</strong> <small>你的社群 / GitHub</small>
+          </a>
+        </div>
+      </article>
+
+      <article class="card third">
+        <h2>Now</h2>
+        <p>你現在在推進什麼？放一段 1–2 句「當下狀態」，很有生命力。</p>
+        <div class="links">
+          <span class="tag"><strong class="mono">/now</strong> <small>可做成獨立頁</small></span>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> insidehouse</div>
+      <div class="mono">Built simple. Powered by AI.</div>
+    </footer>
+  </div>
+
+  <script>
+    // 自動年份
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

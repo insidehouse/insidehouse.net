@@ -3,33 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>insidehouse</title>
-  <meta name="description" content="Insidehouse 是一個數位基地：收納想法、專案、提案與實驗。" />
-  <meta name="theme-color" content="#0b0b0c" />
+  <title>Toby - 美國短毛貓的優雅日常</title>
+  <meta name="description" content="Toby 是一隻銀白色的美國短毛貓，這裡記錄著他的日常生活、照片與成長點滴。" />
+  <meta name="theme-color" content="#f5f5f7" />
 
   <style>
     :root{
-      --bg:#0b0b0c;
-      --panel:#121214;
-      --text:#e9e9ee;
-      --muted:#a7a7b3;
-      --line:rgba(255,255,255,.10);
-      --shadow:0 12px 40px rgba(0,0,0,.45);
-      --radius:18px;
-      --pad:22px;
-      --max:1040px;
+      --bg:#f5f5f7;
+      --panel:#ffffff;
+      --text:#1d1d1f;
+      --muted:#6e6e73;
+      --accent:#c0c0c8;
+      --line:rgba(0,0,0,.08);
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+      --radius:20px;
+      --pad:24px;
+      --max:1100px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Heiti TC", "Microsoft JhengHei", Arial, sans-serif;
-      background: radial-gradient(900px 500px at 25% 10%, rgba(255,255,255,.06), transparent 60%),
-                  radial-gradient(700px 420px at 85% 20%, rgba(255,255,255,.05), transparent 55%),
+      background: radial-gradient(1000px 600px at 30% 15%, rgba(192,192,200,.12), transparent 65%),
+                  radial-gradient(800px 500px at 80% 25%, rgba(220,220,228,.10), transparent 60%),
                   var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.65;
     }
 
     a{color:inherit; text-decoration:none}
@@ -60,8 +62,8 @@
 
     .dot{
       width:10px;height:10px;border-radius:50%;
-      background: rgba(255,255,255,.9);
-      box-shadow: 0 0 0 5px rgba(255,255,255,.08);
+      background: linear-gradient(135deg, #d0d0d8, #a8a8b0);
+      box-shadow: 0 0 0 5px rgba(192,192,200,.15);
     }
 
     .nav{
@@ -73,84 +75,92 @@
 
     .pill{
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      padding: 8px 12px;
+      background: var(--panel);
+      padding: 8px 14px;
       border-radius: 999px;
       font-size: 14px;
       color: var(--muted);
+      transition: all 0.2s ease;
     }
-    .pill:hover{background: rgba(255,255,255,.06); color: var(--text);}
+    .pill:hover{background: rgba(0,0,0,.04); color: var(--text); border-color: var(--accent);}
 
     /* Hero */
     .hero{
-      margin-top: 14px;
+      margin-top: 16px;
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border-radius: calc(var(--radius) + 8px);
-      padding: 34px 22px;
+      background: var(--panel);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 40px 28px;
       box-shadow: var(--shadow);
+      text-align: center;
     }
 
     .kicker{
       display:inline-flex;
       gap:10px;
       align-items:center;
-      font-size:14px;
+      font-size:13px;
       color: var(--muted);
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      padding: 7px 12px;
+      background: rgba(192,192,200,.08);
+      padding: 7px 14px;
       border-radius: 999px;
+      margin-bottom: 12px;
     }
 
     .kicker span{
       display:inline-block;
       width:6px;height:6px;border-radius:50%;
-      background: rgba(255,255,255,.55);
+      background: var(--accent);
     }
 
     h1{
-      margin: 18px 0 10px;
-      font-size: clamp(34px, 5.2vw, 54px);
-      line-height:1.1;
-      letter-spacing: -0.8px;
+      margin: 12px auto 14px;
+      font-size: clamp(40px, 5.5vw, 62px);
+      line-height:1.08;
+      letter-spacing: -1px;
+      font-weight: 700;
+      max-width: 18ch;
     }
 
     .lead{
-      margin: 0;
-      font-size: 16px;
+      margin: 0 auto;
+      font-size: 17px;
       color: var(--muted);
-      max-width: 66ch;
+      max-width: 50ch;
+      line-height: 1.7;
     }
 
     .ctaRow{
-      margin-top: 22px;
+      margin-top: 24px;
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
       align-items:center;
+      justify-content: center;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 12px;
+      gap:8px;
+      padding: 12px 20px;
+      border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.06);
+      background: var(--panel);
       font-weight: 600;
       font-size: 14px;
+      transition: all 0.2s ease;
     }
 
     .btn.primary{
-      background: rgba(255,255,255,.92);
-      color:#0b0b0c;
-      border-color: rgba(255,255,255,.92);
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
     }
 
-    .btn:hover{transform: translateY(-1px)}
+    .btn:hover{transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.12);}
     .btn:active{transform: translateY(0px)}
 
     .hint{
@@ -169,10 +179,16 @@
     .card{
       grid-column: span 12;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background: var(--panel);
       border-radius: var(--radius);
       padding: var(--pad);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.12);
     }
 
     .card h2{
@@ -198,10 +214,16 @@
       align-items:center;
       gap:8px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      padding: 8px 10px;
+      background: rgba(0,0,0,.02);
+      padding: 9px 12px;
       border-radius: 12px;
       font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover{
+      background: rgba(0,0,0,.05);
+      border-color: var(--accent);
     }
 
     .tag small{
@@ -210,11 +232,103 @@
       font-size: 12px;
     }
 
+    /* Profile image */
+    .profile-img{
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #e8e8ed, #d0d0d8);
+      border: 3px solid var(--panel);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12), 0 0 0 1px var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+    }
+
+    /* Photo gallery */
+    .gallery{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .gallery-item{
+      aspect-ratio: 1;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #e8e8ed, #d8d8e0);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover{
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,.15);
+    }
+
+    .gallery-item img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Diary entry */
+    .diary-entry{
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .diary-entry:last-child{
+      border-bottom: none;
+    }
+
+    .diary-date{
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .diary-content{
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    /* Info list */
+    .info-list{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .info-item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .info-label{
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .info-value{
+      color: var(--text);
+      font-weight: 600;
+    }
+
     /* Two-column layout on wider screens */
     @media (min-width: 860px){
-      .hero{padding: 44px 44px;}
+      .hero{padding: 50px 44px;}
       .card.half{grid-column: span 6;}
       .card.third{grid-column: span 4;}
+      .gallery{grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));}
     }
 
     /* Footer */
@@ -236,100 +350,150 @@
 <body>
   <div class="wrap">
     <div class="top">
-      <div class="brand" aria-label="insidehouse">
+      <div class="brand" aria-label="Toby">
         <div class="dot" aria-hidden="true"></div>
-        <div>insidehouse</div>
+        <div>Toby</div>
       </div>
 
-      <nav class="nav" aria-label="site links">
-        <!-- 把 # 換成你的實際網址，例如 https://lab.insidehouse.net -->
-        <a class="pill" href="#lab">Lab</a>
-        <a class="pill" href="#docs">Docs</a>
-        <a class="pill" href="#projects">Projects</a>
-        <a class="pill" href="#about">About</a>
+      <nav class="nav" aria-label="site navigation">
+        <a class="pill" href="#about">關於我</a>
+        <a class="pill" href="#gallery">照片集</a>
+        <a class="pill" href="#diary">日記</a>
+        <a class="pill" href="#social">社群</a>
       </nav>
     </div>
 
     <section class="hero" id="top">
-      <div class="kicker"><span></span>個人／小團隊的數位基地</div>
-      <h1>把想法變成<br/>可被看見的東西。</h1>
+      <div class="profile-img" aria-label="Toby's profile picture">
+        🐱
+      </div>
+      <div class="kicker"><span></span>美國短毛貓 · American Shorthair</div>
+      <h1>嗨，我是 Toby</h1>
       <p class="lead">
-        insidehouse 是一個用來收納想法、專案、提案與實驗的地方。
-        先用最簡單的工具建立，再用 AI 讓產出加速。
+        一隻銀白色的美國短毛貓，喜歡曬太陽、追逐玩具和在紙箱裡打盹。
+        這裡記錄著我的日常生活、成長點滴和各種可愛瞬間。
       </p>
 
       <div class="ctaRow">
-        <!-- 主要 CTA：你最常用的入口 -->
-        <a class="btn primary" href="#lab" aria-label="Go to Lab">
-          進入 Lab <span aria-hidden="true">→</span>
+        <a class="btn primary" href="#gallery" aria-label="View photo gallery">
+          看我的照片 <span aria-hidden="true">📷</span>
         </a>
-        <a class="btn" href="#docs" aria-label="Go to Docs">
-          看 Docs <span aria-hidden="true">↗</span>
+        <a class="btn" href="#diary" aria-label="Read diary">
+          閱讀日記 <span aria-hidden="true">📖</span>
         </a>
-        <div class="hint">提示：把「#lab」換成你的子域名連結會更像真的基地。</div>
       </div>
     </section>
 
     <section class="grid" aria-label="main sections">
-      <article class="card half" id="lab">
-        <h2>Lab</h2>
-        <p>實驗、快速頁面、測試想法。能用 HTML + CSS 解決的都先用這裡。</p>
-        <div class="links">
-          <a class="tag" href="#">
-            <strong class="mono">lab</strong> <small>建議：lab.insidehouse.net</small>
-          </a>
-          <a class="tag" href="#">
-            <strong>Latest build</strong> <small>放你最近的頁面</small>
-          </a>
+      <!-- About Me -->
+      <article class="card half" id="about">
+        <h2>關於我 About</h2>
+        <p>基本資料與個性介紹</p>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">品種</span>
+            <span class="info-value">美國短毛貓</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">毛色</span>
+            <span class="info-value">銀白色</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">性別</span>
+            <span class="info-value">公貓</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">生日</span>
+            <span class="info-value">2025年2月15日</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">個性</span>
+            <span class="info-value">溫柔、好奇、愛撒嬌</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">最愛</span>
+            <span class="info-value">曬太陽、紙箱、逗貓棒</span>
+          </div>
         </div>
       </article>
 
-      <article class="card half" id="docs">
-        <h2>Docs</h2>
-        <p>結案報告、提案、筆記、整理過的內容。讓未來的你能快速回收。</p>
-        <div class="links">
-          <a class="tag" href="#">
-            <strong class="mono">docs</strong> <small>建議：docs.insidehouse.net</small>
-          </a>
-          <a class="tag" href="#">
-            <strong>Index</strong> <small>文件目錄</small>
-          </a>
+      <!-- Photo Gallery -->
+      <article class="card half" id="gallery">
+        <h2>照片集 Gallery</h2>
+        <p>記錄 Toby 的日常與可愛瞬間</p>
+        <div class="gallery">
+          <div class="gallery-item" aria-label="Toby's photo 1">
+            <!-- 可以放入真實照片：<img src="toby1.jpg" alt="Toby"> -->
+          </div>
+          <div class="gallery-item" aria-label="Toby's photo 2">
+            <!-- <img src="toby2.jpg" alt="Toby"> -->
+          </div>
+          <div class="gallery-item" aria-label="Toby's photo 3">
+            <!-- <img src="toby3.jpg" alt="Toby"> -->
+          </div>
+          <div class="gallery-item" aria-label="Toby's photo 4">
+            <!-- <img src="toby4.jpg" alt="Toby"> -->
+          </div>
+          <div class="gallery-item" aria-label="Toby's photo 5">
+            <!-- <img src="toby5.jpg" alt="Toby"> -->
+          </div>
+          <div class="gallery-item" aria-label="Toby's photo 6">
+            <!-- <img src="toby6.jpg" alt="Toby"> -->
+          </div>
         </div>
       </article>
 
-      <article class="card third" id="projects">
-        <h2>Projects</h2>
-        <p>精選作品或正在進行的東西。少而精，讓人一眼懂你在做什麼。</p>
-        <div class="links">
-          <a class="tag" href="#"><strong>Selected</strong> <small>精選清單</small></a>
+      <!-- Diary -->
+      <article class="card" id="diary">
+        <h2>生活日記 Diary</h2>
+        <p>記錄 Toby 的成長點滴與日常趣事</p>
+
+        <div class="diary-entry">
+          <div class="diary-date">2026.01.17</div>
+          <div class="diary-content">
+            今天發現了一個新的紙箱！花了整個下午在裡面探索，還成功把自己塞進這個看起來有點小的空間。人類看到我的樣子一直在笑，但我覺得這個箱子剛剛好。
+          </div>
+        </div>
+
+        <div class="diary-entry">
+          <div class="diary-date">2026.01.15</div>
+          <div class="diary-content">
+            陽光灑進窗台的時候最舒服了。今天在窗邊曬了三個小時的太陽，順便觀察外面的鳥兒。雖然隔著玻璃抓不到，但看著也很開心。
+          </div>
+        </div>
+
+        <div class="diary-entry">
+          <div class="diary-date">2026.01.10</div>
+          <div class="diary-content">
+            新的逗貓棒到貨了！是紅色羽毛的那種，我超級喜歡。今天和人類玩了好久，最後累到直接在地毯上睡著了。運動真的很重要呢。
+          </div>
         </div>
       </article>
 
-      <article class="card third" id="about">
-        <h2>About</h2>
-        <p>一句話介紹你／insidehouse。你也可以把聯絡方式放這。</p>
+      <!-- Social Links -->
+      <article class="card" id="social">
+        <h2>社群連結 Social</h2>
+        <p>在這些地方也能找到我</p>
         <div class="links">
-          <a class="tag" href="mailto:hello@insidehouse.net">
-            <strong>Email</strong> <small>hello@insidehouse.net</small>
+          <a class="tag" href="#">
+            <strong>Instagram</strong> <small>@toby_the_cat</small>
           </a>
           <a class="tag" href="#">
-            <strong>Link</strong> <small>你的社群 / GitHub</small>
+            <strong>Facebook</strong> <small>Toby 的貓生活</small>
           </a>
-        </div>
-      </article>
-
-      <article class="card third">
-        <h2>Now</h2>
-        <p>你現在在推進什麼？放一段 1–2 句「當下狀態」，很有生命力。</p>
-        <div class="links">
-          <span class="tag"><strong class="mono">/now</strong> <small>可做成獨立頁</small></span>
+          <a class="tag" href="#">
+            <strong>YouTube</strong> <small>Toby Daily</small>
+          </a>
+          <a class="tag" href="#">
+            <strong>TikTok</strong> <small>@tobycat</small>
+          </a>
         </div>
       </article>
     </section>
 
     <footer>
-      <div>© <span id="year"></span> insidehouse</div>
-      <div class="mono">Built simple. Powered by AI.</div>
+      <div>© <span id="year"></span> Toby the Cat</div>
+      <div class="mono">Made with ❤️ by Toby's human</div>
     </footer>
   </div>
 

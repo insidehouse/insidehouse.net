@@ -243,7 +243,7 @@
 
       <nav class="nav" aria-label="site links">
         <!-- 把 # 換成你的實際網址，例如 https://lab.insidehouse.net -->
-        <a class="pill" href="/lab/">Lab</a>
+        <a class="pill" href="#lab">Lab</a>
         <a class="pill" href="#docs">Docs</a>
         <a class="pill" href="#projects">Projects</a>
         <a class="pill" href="#about">About</a>
@@ -260,13 +260,13 @@
 
       <div class="ctaRow">
         <!-- 主要 CTA：你最常用的入口 -->
-        <a class="btn primary" href="/lab/" aria-label="Go to Lab">
+        <a class="btn primary" href="#lab" aria-label="Go to Lab">
           進入 Lab <span aria-hidden="true">→</span>
         </a>
         <a class="btn" href="#docs" aria-label="Go to Docs">
           看 Docs <span aria-hidden="true">↗</span>
         </a>
-        <div class="hint">實驗場已上線，快去看看！</div>
+        <div class="hint">提示：把「#lab」換成你的子域名連結會更像真的基地。</div>
       </div>
     </section>
 
@@ -275,11 +275,11 @@
         <h2>Lab</h2>
         <p>實驗、快速頁面、測試想法。能用 HTML + CSS 解決的都先用這裡。</p>
         <div class="links">
-          <a class="tag" href="/lab/">
-            <strong class="mono">lab</strong> <small>進入實驗場</small>
+          <a class="tag" href="#">
+            <strong class="mono">lab</strong> <small>建議：lab.insidehouse.net</small>
           </a>
-          <a class="tag" href="/lab/#">
-            <strong>6 experiments</strong> <small>查看全部</small>
+          <a class="tag" href="#">
+            <strong>Latest build</strong> <small>放你最近的頁面</small>
           </a>
         </div>
       </article>
@@ -324,17 +324,6 @@
         <div class="links">
           <span class="tag"><strong class="mono">/now</strong> <small>可做成獨立頁</small></span>
         </div>
-      </article>
-
-      <article class="card" id="skills">
-        <h2>Skills</h2>
-        <p>可直接用 npx 執行的工具與技能。在終端機輸入指令即可體驗。</p>
-        <div class="links">
-          <a class="tag" href="https://github.com/vercel-labs/skills">
-            <strong class="mono">find-skills</strong> <small>尋找可用的 skills</small>
-          </a>
-        </div>
-        <pre class="mono" style="margin-top:14px; padding:12px 14px; background:rgba(255,255,255,.04); border-radius:10px; font-size:13px; overflow-x:auto; border:1px solid var(--line);">npx skills add https://github.com/vercel-labs/skills --skill find-skills</pre>
       </article>
     </section>
 
